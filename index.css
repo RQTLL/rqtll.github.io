@@ -235,6 +235,7 @@ main {
 .features-layout {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2em;
     width: 100%;
 }
@@ -243,13 +244,11 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.5em;
-    width: 30%;
 }
 
 .features-views {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width: calc(70% - 2em);
+    width: calc(100% - 400px);
 }
 
 .feature-card {
