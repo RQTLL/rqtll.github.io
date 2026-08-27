@@ -185,7 +185,6 @@ section {
     font-size: clamp(16px, 2vw, 20px);
     color: var(--text-muted);
     max-width: 50vw;
-    margin-bottom: 1em;
 }
 
 .hero-actions {
@@ -193,6 +192,7 @@ section {
     gap: 3em;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 }
 
 .btn-primary {
