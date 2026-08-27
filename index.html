@@ -32,6 +32,7 @@
 			<li><a href="#features">Características</a></li>
 			<li><a href="#install">Instalación</a></li>
 			<!-- <li><a href="#" target="_blank">Documentación</a></li> -->
+			<li><a href="#cite">Citar</a></li>
 			<li>
 				<a href="https://github.com/RQTLL" target="_blank" class="btn-github">
 					<i class="fa-brands fa-github"></i>
@@ -182,7 +183,7 @@
 							<span class="terminal-prompt">&gt;_</span>
 							<span class="terminal-cmd" id="installCmd">sudo sh -c "$(curl -fsSL
 								https://raw.githubusercontent.com/RQTLL/rqtll-distro/main/install.sh)"</span>
-							<button class="btn-copy" onclick="copyCommand()">
+							<button class="btn-copy" onclick="copyCommand(0)">
 								<i class="fa-regular fa-copy"></i>
 							</button>
 						</div>
@@ -207,6 +208,45 @@
 						<li>Revisa el script antes de ejecutarlo para asegurarte de que cumple con tus necesidades y
 							políticas de seguridad.</li>
 					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="citation-section" id="cite">
+			<h2>Citar RQTLL</h2>
+			<p class="sub">Si usas RQTLL en tu trabajo, por favor cita la siguiente fuente:</p>
+			<div class="tex-window">
+				<div class="tab-container">
+					<div class="tab active" id="tab1">BibTeX</div>
+					<div class="tab" id="tab2">APA</div>
+					<div class="tab" id="tab3">IEEE</div>
+				</div>
+				<div class="tex-body">
+					<div class="tex-content" id="bibtex">
+						<pre>
+@software{de_la_Cruz_Osorio_RQTLL_ROS2_Qt_2026,
+  author  = {de la Cruz Osorio, Adan Rodrigo and Garcia, Francesco},
+  license = {MIT},
+  month   = aug,
+  title   = {{RQTLL: ROS2 Qt Layer for Low-level operations}},
+  url     = {https://github.com/RQTLL},
+  version = {1.0.0},
+  year    = {2026}
+}
+						</pre>
+					</div>
+					<div class="tex-content" id="apa" hidden>
+						<pre>
+de la Cruz Osorio, A., & Garcia, F. (2026). <i>RQTLL: ROS2 Qt Layer for Low-level operations</i>, Version 1.0.0. [Computer software]. https://github.com/RQTLL
+						</pre>
+					</div>
+					<div class="tex-content" id="ieee" hidden>
+						<pre>
+A. de la Cruz Osorio, F. Garcia, <i>RQTLL: ROS2 Qt Layer for Low-level operations</i>, Version 1.0.0. 2026. [Online]. Available: https://github.com/RQTLL.
+						</pre>
+					</div>
+					<div class="btn-copy" onclick="copyCommand(cite)">
+						<i class="fa-regular fa-copy"></i>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -262,13 +302,23 @@
 		</div>
 		<div class="footer-bottom">
 			<p>&copy; 2026 RQTLL. Todos los derechos reservados.</p>
-			<p>Licencia MIT. Desarrollado por adnKSharp & la comunidad de robótica.</p>
+			<p>Licencia MIT. Desarrollado por <a href="https://github.com/adnksharp" target="_blank">Adan de la
+					Cruz</a>, <a href="https://orcid.org/0000-0002-8571-914X" target="_blank">Francesco Garcia</a> y la
+				comunidad de RQTLL.</p>
 		</div>
 	</footer>
 
 	<script>
-		function copyCommand() {
-			const cmdText = document.getElementById('installCmd').innerText;
+		const citations = [
+			"sudo sh -c \"$(curl -fsSL https://raw.githubusercontent.com/RQTLL/rqtll-distro/main/install.sh)\"",
+			"@software{de_la_Cruz_Osorio_RQTLL_ROS2_Qt_2026,\n  author  = {de la Cruz Osorio, Adan Rodrigo and Garcia, Francesco},\n  license = {MIT},\n  month   = aug,\n  title   = {{RQTLL: ROS2 Qt Layer for Low-level operations}},\n  url     = {https://github.com/RQTLL},\n  version = {1.0.0},\n  year    = {2026}\n}",
+			"de la Cruz Osorio, A., & Garcia, F. (2026). RQTLL: ROS2 Qt Layer for Low-level operations, Version 1.0.0. [Computer software]. https://github.com/RQTLL",
+			"A. de la Cruz Osorio, F. Garcia, RQTLL: ROS2 Qt Layer for Low-level operations, Version 1.0.0. 2026. [Online]. Available: https://github.com/RQTLL."
+		];
+		var cite = 1;
+
+		function copyCommand(index) {
+			const cmdText = citations[index];
 			navigator.clipboard.writeText(cmdText).then(() => { });
 		}
 
@@ -284,6 +334,21 @@
 					if (views[index]) {
 						views[index].hidden = false;
 					}
+				});
+			});
+
+			const tabs = document.querySelectorAll('.tab');
+			const texContents = document.querySelectorAll('.tex-content');
+
+			tabs.forEach((tab, index) => {
+				tab.addEventListener('click', () => {
+					tabs.forEach(t => t.classList.remove('active'));
+					texContents.forEach(c => c.hidden = true);
+					tab.classList.add('active');
+					if (texContents[index]) {
+						texContents[index].hidden = false;
+					}
+					cite = index + 1;
 				});
 			});
 		});

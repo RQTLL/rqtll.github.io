@@ -40,6 +40,21 @@
     }
 }
 
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Opera */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -50,8 +65,9 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-main);
-    overflow-x: hidden;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -133,14 +149,17 @@ main {
     margin: 0 auto;
 }
 
-.hero,
-.features-section,
-.install-section {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 80px 6% 60px 6%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    margin-inline: auto;
+    height: 100vh;
 }
 
 .hero h1 {
@@ -220,13 +239,15 @@ main {
 }
 
 .features-section h2,
-.install-section h2 {
+.install-section h2,
+.citation-section h2 {
     font-size: 36px;
     margin-bottom: 16px;
 }
 
 .features-section p.sub,
-.install-section p.sub {
+.install-section p.sub,
+.citation-section p.sub {
     color: var(--text-muted);
     margin-bottom: 30px;
     font-size: 18px;
@@ -238,12 +259,12 @@ main {
     flex-wrap: wrap;
     gap: 2em;
     width: 100%;
+    margin-bottom: auto;
 }
 
 .features-block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5em;
 }
 
 .features-views {
@@ -320,7 +341,7 @@ main {
 
 .install-layout {
     margin-top: 2em;
-    margin-bottom: 200px;
+    margin-bottom: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 2em;
@@ -402,7 +423,7 @@ main {
     border: 0;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 40px var(--border-hover);
+    box-shadow: 0px 5px 10px #00000045;
 }
 
 .terminal-header {
@@ -440,8 +461,8 @@ main {
 }
 
 .btn-copy {
-    background-color: #ffffff0d;
-    border: 1px solid #252526;
+    background-color: #333;
+    border: 1px solid #ffffff00;
     color: #fff;
     padding: 6px 12px;
     border-radius: 5px;
@@ -464,6 +485,62 @@ main {
     border-color: var(--primary);
 }
 
+.tex-window {
+    margin-bottom: auto;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid #00000000;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 10px 10px 0 0;
+}
+
+.tab:hover {
+    color: var(--primary);
+}
+
+.tab.active {
+    background-color: var(--primary);
+    color: #000;
+}
+
+.tex-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-items);
+    border: 0;
+    border-radius: 0 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px #00000045;
+    padding: 24px;
+    width: 60em;
+    height: 21em;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.tex-content pre {
+    text-align: left;
+    text-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
 footer {
     border-top: 1px solid var(--border);
     padding: 60px 8% 40px 8%;
@@ -473,6 +550,7 @@ footer {
     background-color: var(--bg-footer);
     position: relative;
     z-index: 10;
+    scroll-snap-align: end;
 }
 
 .footer-top {
@@ -520,14 +598,14 @@ footer hr {
     gap: 12px;
 }
 
-.footer-group a {
+footer a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 14px;
     transition: var(--transition);
 }
 
-.footer-group a:hover {
+footer a:hover {
     color: var(--primary);
 }
 
