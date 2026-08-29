@@ -1,0 +1,191 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+
+nav {
+    padding: 0 8%;
+}
+.logo-container {
+    gap: 12px;
+}
+
+.nav-links {
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-github:hover {
+    border-color: var(--primary);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+}
+
+.features-section h2,
+.install-section h2,
+.citation-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+}
+
+.hero p {
+    max-width: 50vw;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+}
+
+.main-frame img {
+    width: 90%;
+
+}
+
+.features-section p.sub,
+.install-section p.sub,
+.citation-section p.sub {
+    color: var(--text-muted);
+    margin-bottom: 2REM;
+    font-size: 1.5rem;
+}
+
+.features-layout {
+    flex-direction: row;
+}
+
+.features-block {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.features-views {
+    width: calc(100% - 400px);
+}
+
+.feature-card {
+    min-width: 300px;
+    padding: 1.5em 2em;
+    margin-bottom: 2em;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px var(--border-hover);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: -75px;
+    right: -75px;
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-view p {
+    height: 4em;
+    margin-bottom: 0;
+}
+
+.feature-view picture {
+    height: 60vh;
+}
+
+.install-layout {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.install-layout h3 {
+    font-size: 1.5rem;
+    margin-top: 1em;
+}
+
+.install-section a:hover {
+    text-decoration: underline;
+}
+
+.install-layout p,
+.install-layout li {
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+
+.btn-copy:hover {
+    border-color: var(--primary);
+}
+
+.btn-copy:active {
+    background-color: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+.feature-card h3 {
+    font-size: 20px;
+}
+
+.tab:hover {
+    color: var(--primary);
+}
+
+.tex-body {
+    width: 60em;
+    height: 21em;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+}
+
+footer {
+    padding: 60px 8% 40px 8%;
+    scroll-snap-align: end;
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+.footer-top {
+    gap: 40px;
+}
+
+.footer-desc {
+    max-width: 320px;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.footer-links {
+    gap: 5rem;
+}

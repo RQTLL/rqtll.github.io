@@ -1,0 +1,111 @@
+nav {
+	padding: 0 2%;
+}
+
+.logo-text {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.logo-container {
+    gap: 6px;
+}
+
+.nav-links {
+	margin-left: 10px;
+}
+
+.nav-links a {
+	font-size: 0.9rem;
+	padding: 0 0 0 8px;
+}
+
+.nav-links .btn-github {
+	margin-left: 8px;
+	padding: 8px;
+}
+
+section {
+	 height: 100vh;
+}
+
+.main-frame {
+	margin-bottom: auto;
+}
+
+.hero
+
+.features-section h2,
+.install-section h2,
+.citation-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem
+}
+
+.feature-card {
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.features-section p.sub,
+.install-section p.sub,
+.citation-section p.sub {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.install-layout p,
+.install-layout li {
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+
+.terminal-body {
+	padding: 0.8rem;
+}
+
+.btn-copy {
+	display: none;
+}
+
+footer {
+	display: flex;
+	wrap: wrap;
+}
+
+.footer-desc-container {
+	width: calc(100% - 4.5rem);
+	padding-left: 0.5rem;
+}
+
+footer img {
+	width: 4rem;
+	height: 4rem;
+	margin-right: 0;
+}
+
+.footer-desc {
+	font-size: 0.8rem;
+}
+
+.footer-top {
+    gap: 0.5rem;
+}
+
+.footer-group,
+.footer-group ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.footer-spacer {
+	display: none;
+}
+
+.footer-links {
+	justify-content: space-between;
+	width: 100%;
+}
