@@ -183,7 +183,7 @@
 					<div class="terminal-body">
 						<div class="terminal-line">
 							<span class="terminal-prompt">&gt;_</span>
-							<span class="terminal-cmd" id="installCmd">sudo sh -c "$(curl -fsSL
+							<span class="terminal-cmd" id="installCmd">sudo bash -c "$(curl -fsSL
 								https://raw.githubusercontent.com/RQTLL/rqtll-distro/main/install.sh)"</span>
 							<button class="btn-copy" onclick="copyCommand(0)">
 								<i class="fa-regular fa-copy"></i>
@@ -194,9 +194,9 @@
 				<div class="left recomended-system">
 					<h3>Sistema recomendado</h3>
 					<ul>
-						<li>Distribución: Ubuntu <span>26.04 LTS</span></li>
+						<li>Distribución: Ubuntu <span>22.04 LTS AMD64</span>, Ubuntu <span>22.04 LTS ARM64</span> o superior</li>
 						<li>Configuración del sistema: Paquete de idioma configurado en <span>UTF-8</span></li>
-						<li>Arquitectura: <span>x86_64</span></li>
+						<li>Paquetes: <span>curl git</span></li>
 						<li>Manejador de ventanas: <span>Wayland</span></li>
 					</ul>
 				</div>
@@ -312,7 +312,7 @@ A. de la Cruz Osorio, F. Garcia, <i>RQTLL: ROS2 Qt Layer for Low-level operation
 
 	<script>
 		const citations = [
-			"sudo sh -c \"$(curl -fsSL https://raw.githubusercontent.com/RQTLL/rqtll-distro/main/install.sh)\"",
+			"sudo bash -c \"$(curl -fsSL https://raw.githubusercontent.com/RQTLL/rqtll-distro/main/install.sh)\"",
 			"@software{de_la_Cruz_Osorio_RQTLL_ROS2_Qt_2026,\n  author  = {de la Cruz Osorio, Adan Rodrigo and Garcia, Francesco},\n  license = {MIT},\n  month   = aug,\n  title   = {{RQTLL: ROS2 Qt Layer for Low-level operations}},\n  url     = {https://github.com/RQTLL},\n  version = {1.0.0},\n  year    = {2026}\n}",
 			"de la Cruz Osorio, A., & Garcia, F. (2026). RQTLL: ROS2 Qt Layer for Low-level operations, Version 1.0.0. [Computer software]. https://github.com/RQTLL",
 			"A. de la Cruz Osorio, F. Garcia, RQTLL: ROS2 Qt Layer for Low-level operations, Version 1.0.0. 2026. [Online]. Available: https://github.com/RQTLL."
